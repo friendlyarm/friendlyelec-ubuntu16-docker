@@ -61,7 +61,7 @@ $ make
 ```
 * Qt5.9.1 (for S905 platform)  
 ```
-$ cd /work
+$ cd /work/
 $ export PATH=/opt/FriendlyARM/toolchain/6.4-aarch64/bin/:$PATH
 $ git clone https://github.com/friendlyarm/QtE-Demo
 $ mkdir build && cd build
@@ -70,6 +70,7 @@ $ make
 ```
 * Qt5.10.0 armhf X11 (for RK3399 Lubuntu OS) 
 ```
+$ cd /work/
 $ git clone https://github.com/friendlyarm/QtE-Demo
 $ mkdir build && cd build
 $ /usr/local/Trolltech/Qt-5.10.0-rk32xcb-x86tools/bin/qmake ../QtE-Demo/QtE-Demo.pro
