@@ -1,9 +1,9 @@
 ## **FriendlyELEC-Ubuntu16-Docker**
 
 This docker image is used to cross-compile Qt application for FriendlyELEC's boards, support for the following qt versions:  
-* Qt4.8.6 (for Allwinner H3/H5 platform)  
-* Qt5.9.1 (for S905 platform)  
+* Qt5.9.1 (for S5P4418/S5P6818/S905)  
 * Qt5.10.0 armhf X11 (for RK3399 Lubuntu OS)  
+* Qt4.8.6 (for Allwinner H3/H5)  
 
 Build docker image with qt-sdk and toolchain added
 ------------
@@ -34,6 +34,22 @@ Cross compile qt application
 
 We took QtE-Demo as an example to show how to cross compile qt application:
 
+* Qt5.9.1 (for S5P4418 platform)
+```
+$ cd /work
+$ git clone https://github.com/friendlyarm/QtE-Demo
+$ mkdir build && cd build
+$ /usr/local/Trolltech/Qt-5.9.1-nexell32-x86tools/bin/qmake ../QtE-Demo/QtE-Demo.pro
+$ make
+```
+* Qt5.9.1 (for S5P6818 platform)
+```
+$ cd /work
+$ git clone https://github.com/friendlyarm/QtE-Demo
+$ mkdir build && cd build
+$ /usr/local/Trolltech/Qt-5.9.1-nexell64-x86tools/bin/qmake ../QtE-Demo/QtE-Demo.pro
+$ make
+```
 * Qt4.8.6 (for Allwinner H3/H5 platform)  
 ```
 $ cd /work/
@@ -100,8 +116,6 @@ Resources
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
 * How to Build and Install Qt Application for FriendlyELEC Boards
 http://wiki.friendlyarm.com/wiki/index.php/How_to_Build_and_Install_Qt_Application_for_FriendlyELEC_Boards
-
-
 
 
 ## License
