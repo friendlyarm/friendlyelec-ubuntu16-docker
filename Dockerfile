@@ -6,8 +6,12 @@ COPY ./files/sources-1604.list /etc/apt/sources.list
 RUN set -x; \
     mkdir -p ~/.pip
 COPY ./files/pip.conf ~/.pip/pip.conf
+
 RUN apt-get update; \
-    apt-get -y install aria2 wget make lsb-release openssh-client vim tree exfat-fuse exfat-utils u-boot-tools mediainfo \
+    apt-get -y install libc6-dev-i386; \
+    apt-get -y install gcc-multilib g++-multilib
+
+RUN apt-get -y install curl aria2 wget make lsb-release openssh-client vim tree exfat-fuse exfat-utils u-boot-tools mediainfo \
     libasound2-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libxcb-xinerama0 libxcb-xinerama0-dev \
     libopenal-dev libalut-dev libpulse-dev libuv1-dev libmicrohttpd-dev libssl-dev bridge-utils ifplugd \
     libbluetooth3-dev libjpeg8 libjpeg8-dev libjpeg-turbo8 libjpeg-turbo8-dev libvpx-dev \
@@ -19,8 +23,10 @@ RUN apt-get update; \
     libxtst-dev gyp ninja-build  \
     libssl-dev libxcursor-dev libxcomposite-dev libxdamage-dev libxrandr-dev \
     libfontconfig1-dev libxss-dev libsrtp0-dev libwebp-dev libjsoncpp-dev libopus-dev libminizip-dev \
-    libavutil-dev libavformat-dev libavcodec-dev libevent-dev libcups2-dev libpapi-dev \
-    gcc-aarch64-linux-gnu g++-aarch64-linux-gnu gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
+    libavutil-dev libavformat-dev libavcodec-dev libevent-dev libcups2-dev libpapi-dev
+
+RUN apt-get -y install gcc-aarch64-linux-gnu g++-aarch64-linux-gnu gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
+RUN ln -s /usr/include/asm-generic/ /usr/include/asm
 
 RUN echo "root:fa" | chpasswd
 USER root
