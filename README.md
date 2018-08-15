@@ -1,8 +1,8 @@
 ## **FriendlyELEC-Ubuntu16-Docker**
 
 This docker image is used to cross-compile Qt application for FriendlyELEC's boards, support for the following qt versions:  
-* Qt5.9.1 (for S5P4418/S5P6818/S905)  
-* Qt5.10.0 armhf X11 (for RK3399 Lubuntu OS)  
+* Qt5.10.0 on FriendlyCore Xenial(for S5P4418/S5P6818/S905)  
+* Qt5.10.0 on Lubuntu Xenial(for RK3399 Lubuntu OS)  
 * Qt4.8.6 (for Allwinner H3/H5)  
 
 Build docker image with qt-sdk and toolchain added
@@ -34,20 +34,20 @@ Cross compile qt application
 
 We took QtE-Demo as an example to show how to cross compile qt application:
 
-* Qt5.9.1 (for S5P4418 platform)
+* Qt5.10.0 (for S5P4418 platform)
 ```
 $ cd /work
 $ git clone https://github.com/friendlyarm/QtE-Demo
 $ mkdir build && cd build
-$ /usr/local/Trolltech/Qt-5.9.1-nexell32-x86tools/bin/qmake ../QtE-Demo/QtE-Demo.pro
+$ /usr/local/Trolltech/Qt-5.10.0-nexell32-sdk/bin/qmake ../QtE-Demo/QtE-Demo.pro
 $ make
 ```
-* Qt5.9.1 (for S5P6818 platform)
+* Qt5.10.0 (for S5P6818 platform)
 ```
 $ cd /work
 $ git clone https://github.com/friendlyarm/QtE-Demo
 $ mkdir build && cd build
-$ /usr/local/Trolltech/Qt-5.9.1-nexell64-x86tools/bin/qmake ../QtE-Demo/QtE-Demo.pro
+$ /usr/local/Trolltech/Qt-5.10.0-nexell64-sdk/bin/qmake ../QtE-Demo/QtE-Demo.pro
 $ make
 ```
 * Qt4.8.6 (for Allwinner H3/H5 platform)  
@@ -73,7 +73,7 @@ $ make
 $ cd /work/
 $ git clone https://github.com/friendlyarm/QtE-Demo
 $ mkdir build && cd build
-$ /usr/local/Trolltech/Qt-5.10.0-rk32xcb-x86tools/bin/qmake ../QtE-Demo/QtE-Demo.pro
+$ /usr/local/Trolltech/Qt-5.10.0-rk32xcb-sdk/bin/qmake ../QtE-Demo/QtE-Demo.pro
 $ make
 ```
 
@@ -110,6 +110,9 @@ NanoPC T3 Plus
 
 * S905  
 NanoPi K2  
+
+* RK3399  
+NanoPC T4
 
 Resources
 ------------
