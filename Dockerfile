@@ -9,7 +9,7 @@ COPY ./files/pip.conf ~/.pip/pip.conf
 
 RUN apt-get update; \
     apt-get -y install libc6-dev-i386; \
-    apt-get -y install gcc-multilib g++-multilib
+    apt-get -y install gcc-multilib g++-multilib debootstrap qemu-user-static
 
 RUN apt-get -y install curl aria2 wget make lsb-release openssh-client vim tree exfat-fuse exfat-utils u-boot-tools mediainfo \
     libasound2-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libxcb-xinerama0 libxcb-xinerama0-dev \
