@@ -112,9 +112,9 @@ NanoPC T3 Plus
 NanoPi K2  
 
 * RK3399  
-NanoPC T4
-NanoPi M4
-NanoPi NEO4
+NanoPC T4  
+NanoPi M4  
+NanoPi NEO4  
 
 Resources
 ------------
